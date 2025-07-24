@@ -2,7 +2,17 @@
 
 using namespace std;
 
+int sumaNumeros(int a, int b) {
+    return a + b;
+}
 int main() {
-    cout << "Hola, mundo!" << endl;
+    
+    int numero1 = 10;
+    int numero2 = 12;
+
+    int resultado = sumaNumeros(numero1, numero2);
+
+    cout << resultado << endl;
+
     return 0;
 }
