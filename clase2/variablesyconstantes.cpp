@@ -28,7 +28,9 @@ using namespace std;
 // Tipos de datos void: Sin tipo
 int main() {
 
-    
+    int vector[3];
+
+    string vcio = "";
 
     return 0;
 }

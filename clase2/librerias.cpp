@@ -26,56 +26,32 @@
 using namespace std;
 
 int main() {
+
+    const int filas = 3;
+    const int columnas =3;
+
+    vector<vector<int>> matriz(filas, vector<int> (columnas, 0));
+                            
+    matriz[0][0] = 5;
+    matriz[0][1] = 9;
+    matriz[0][2] = 5;
+    matriz[1][0] = 9;
+    matriz[1][1] = 5;
+    matriz[1][2] = 9;
+    matriz[2][0] = 5;
+    matriz[2][1] = 9;
+    matriz[2][2] = 9;
     
-    // Ejemplo de uso de las librerías
-    // Usando iostream para entrada/salida
-    cout << "Hola, mundo!" << endl;
-    // Usando cmath para calcular la raíz cuadrada
-    double numero = 16.0;
-    double raiz = sqrt(numero);
-    cout << "La raíz cuadrada de " << numero << " es " << raiz << endl;
+    for(int i = 0; i < filas; i = i + 1) {
+        for(int j = 0; j < columnas; j++) {
+            cout << matriz[i][j] << " "; 
+        }
+        cout << endl;
+    }
+
+    // matriz[0][0] matriz[0][1] matriz[0][2]
+    // matriz[1][0] matriz[1][1] matriz[1][2]
+    // matriz[2][0] matriz[2][1] matriz[2][2]
     
-    // Usando cstdlib para generar un número aleatorio
-    srand(static_cast<unsigned int>(time(0))); // Semilla para números aleatorios
-    int numeroAleatorio = rand() % 100; // Genera un número aleatorio entre 0 y 99
-    cout << "Número aleatorio: " << numeroAleatorio << endl;
-
-    // Usando ctime para obtener la hora actual
-    time_t ahora = time(0);
-    char* fechaHora = ctime(&ahora);
-    cout << "Fecha y hora actual: " << fechaHora;
-
-    // Usando string para manipulación de cadenas
-    string saludo = "Hola, C++!";
-    cout << "Saludo: " << saludo << endl;
-
-    // Usando vector para trabajar con arrays dinámicos
-    vector<int> numeros = {1, 2, 3, 4, 5};
-    cout << "Números en el vector: ";
-    for (int num : numeros) {
-        cout << num << " ";
-    }
-
-    cout << endl;
-
-    // Usando algorithm para ordenar el vector
-    sort(numeros.begin(), numeros.end());
-    cout << "Números en el vector (ordenados): ";
-    for (int num : numeros) {
-        cout << num << " ";
-    }
-    cout << endl;
-
-    // Usando algorithm para encontrar un elemento
-    auto it = find(numeros.begin(), numeros.end(), 3);
-    if (it != numeros.end()) {
-        cout << "El número 3 se encuentra en el vector." << endl;
-    } else {
-        cout << "El número 3 no se encuentra en el vector." << endl;
-    }
-
-    // Fin del ejemplo
-    cout << "Fin del programa." << endl;
-
     return 0;
 }

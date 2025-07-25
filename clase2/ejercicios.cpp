@@ -14,6 +14,16 @@ using namespace std;
 
 
 int main () {
+    int numero;
+
+    cout << "Ingrese un numero: ";
+    cin >> numero;
+
+    if(numero % 2 == 1){
+        cout << numero << " es un numero impar";
+    } else {
+        cout << numero << " es un numero par";
+    }
 
     return 0;
 }
