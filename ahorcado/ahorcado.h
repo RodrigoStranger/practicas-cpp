@@ -63,9 +63,7 @@ inline bool juegoTerminado(int intentos, int maxIntentos, bool palabraAdivinada)
 
 inline void procesarLetra(char letra, string& palabra, vector<char>& letrasAdivinadas, vector<char>& letrasIncorrectas, int& intentos) {
     bool letraEnPalabra = false;
-
     palabra = convertirALetraMinuscula(palabra);
-
     for (int i = 0; i < palabra.size(); i++) {
         if (palabra[i] == letra) {
             letraEnPalabra = true;
@@ -108,7 +106,6 @@ inline void ejecutarJuego(string& palabra, int& intentos, int maxIntentos, vecto
         mostrarProgreso(palabra, letrasAdivinadas);
         mostrarLetrasIncorrectas(letrasIncorrectas);
         char letra = pedirLetra();
-        
         if (!letraYaIngresada(letra, letrasAdivinadas, letrasIncorrectas)) {
             procesarLetra(letra, palabra, letrasAdivinadas, letrasIncorrectas, intentos);
         }        if (palabraAdivinada(palabra, letrasAdivinadas)) {
@@ -118,7 +115,6 @@ inline void ejecutarJuego(string& palabra, int& intentos, int maxIntentos, vecto
             return;
         }
     }
-
     limpiarConsola();
     mostrarAhorcado(intentos);
     mostrarResultadoFinal(false, palabra, intentos, maxIntentos, letrasIncorrectas);
