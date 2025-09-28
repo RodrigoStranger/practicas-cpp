@@ -24,6 +24,7 @@ inline void limpiarConsola() {
 }
 
 inline char pedirLetra() {
+    cout << "Escribe una letra: ";
     char letra;
     cin >> letra;
     letra = convertirALetraMinuscula(letra);

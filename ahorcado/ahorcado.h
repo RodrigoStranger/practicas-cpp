@@ -23,11 +23,17 @@ inline void inicializarJuego(string& palabra, int& intentos, int& maxIntentos, s
 inline bool letraYaIngresada(char letra, const vector<char>& letrasAdivinadas, const vector<char>& letrasIncorrectas) {
     for (int i = 0; i < letrasAdivinadas.size(); i++) {
         if (letrasAdivinadas[i] == letra) {
+            cout << "Ya ingresaste esa letra. Presiona Enter para continuar...";
+            cin.ignore();
+            cin.get();
             return true;
         }
     }
     for (int i = 0; i < letrasIncorrectas.size(); i++) {
         if (letrasIncorrectas[i] == letra) {
+            cout << "Ya ingresaste esa letra. Presiona Enter para continuar...";
+            cin.ignore();
+            cin.get();
             return true;
         }
     }
@@ -98,26 +104,14 @@ inline void ejecutarJuego(string& palabra, int& intentos, int maxIntentos, vecto
     while (!juegoTerminado(intentos, maxIntentos, palabraAdivinada(palabra, letrasAdivinadas))) {
         limpiarConsola();
         mostrarCategoria(categoria);
-        if (intentos > 0) {
-            mostrarAhorcado(intentos);
-        }
-        cout << "Progreso: ";
+        mostrarAhorcado(intentos);
         mostrarProgreso(palabra, letrasAdivinadas);
-        cout << "Letras incorrectas: ";
         mostrarLetrasIncorrectas(letrasIncorrectas);
-
-        cout << "Escribe una letra: ";
         char letra = pedirLetra();
-
+        
         if (!letraYaIngresada(letra, letrasAdivinadas, letrasIncorrectas)) {
             procesarLetra(letra, palabra, letrasAdivinadas, letrasIncorrectas, intentos);
-        } else {
-            cout << "Ya ingresaste esa letra. Presiona Enter para continuar...";
-            cin.ignore();
-            cin.get();
-        }
-
-        if (palabraAdivinada(palabra, letrasAdivinadas)) {
+        }        if (palabraAdivinada(palabra, letrasAdivinadas)) {
             limpiarConsola();
             mostrarAhorcado(intentos);
             mostrarResultadoFinal(true, palabra, intentos, maxIntentos, letrasIncorrectas);

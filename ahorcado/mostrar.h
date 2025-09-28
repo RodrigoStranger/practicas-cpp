@@ -8,6 +8,7 @@ inline void mostrarCategoria(const string& categoria) {
 }
 
 inline void mostrarProgreso(const string& palabra, const vector<char>& letrasAdivinadas) {
+  cout << "Progreso: ";
   for (int i = 0; i < palabra.size(); i++) {
     char c = palabra[i];
     bool encontrada = false;
@@ -28,6 +29,7 @@ inline void mostrarProgreso(const string& palabra, const vector<char>& letrasAdi
 
 
 inline void mostrarLetrasIncorrectas(const vector<char>& letrasIncorrectas) {
+  cout << "Letras incorrectas: ";
   cout << "[";
   for (int i = 0; i < letrasIncorrectas.size(); i++) {
     cout << letrasIncorrectas[i];
@@ -52,7 +54,19 @@ inline void mostrarResultadoFinal(bool victoria, const string& palabra, int inte
 
 inline void mostrarAhorcado(int intentos) {
     static const vector<vector<string>> etapas = {
-        { // 0 - vacío
+        {
+          "+--------------------+",
+          "|                    |",
+          "|                    |",
+          "|                    |",
+          "|                    |",
+          "|                    |",
+          "|                    |",
+          "|                    |",
+          "|                    |",
+          "+--------------------+"
+        },
+        {
           "+--------------------+",
           "|                    |",
           "|                    |",
@@ -64,7 +78,7 @@ inline void mostrarAhorcado(int intentos) {
           "|   ============     |",
           "+--------------------+"
         },
-        { // 1 - poste
+        {
           "+--------------------+",
           "|   |                |",
           "|   |                |",
@@ -72,11 +86,11 @@ inline void mostrarAhorcado(int intentos) {
           "|   |                |",
           "|   |                |",
           "|   |                |",
-          "|                    |",
+          "|   |                |",
           "|   ============     |",
           "+--------------------+"
         },
-        { // 2 - poste + horizontal
+        {
           "+--------------------+",
           "|   +----------+     |",
           "|   |                |",
@@ -84,11 +98,11 @@ inline void mostrarAhorcado(int intentos) {
           "|   |                |",
           "|   |                |",
           "|   |                |",
-          "|                    |",
+          "|   |                |",
           "|   ============     |",
           "+--------------------+"
         },
-        { // 3 - soga
+        {
           "+--------------------+",
           "|   +----------+     |",
           "|   |          |     |",
@@ -96,11 +110,11 @@ inline void mostrarAhorcado(int intentos) {
           "|   |                |",
           "|   |                |",
           "|   |                |",
-          "|                    |",
+          "|   |                |",
           "|   ============     |",
           "+--------------------+"
         },
-        { // 4 - cabeza
+        {
           "+--------------------+",
           "|   +----------+     |",
           "|   |          |     |",
@@ -108,11 +122,11 @@ inline void mostrarAhorcado(int intentos) {
           "|   |                |",
           "|   |                |",
           "|   |                |",
-          "|                    |",
+          "|   |                |",
           "|   ============     |",
           "+--------------------+"
         },
-        { // 5 - cuerpo
+        {
           "+--------------------+",
           "|   +----------+     |",
           "|   |          |     |",
@@ -120,11 +134,11 @@ inline void mostrarAhorcado(int intentos) {
           "|   |          |     |",
           "|   |                |",
           "|   |                |",
-          "|                    |",
+          "|   |                |",
           "|   ============     |",
           "+--------------------+"
         },
-        { // 6 - brazo izq
+        {
           "+--------------------+",
           "|   +----------+     |",
           "|   |          |     |",
@@ -132,43 +146,43 @@ inline void mostrarAhorcado(int intentos) {
           "|   |         /|     |",
           "|   |                |",
           "|   |                |",
-          "|                    |",
+          "|   |                |",
           "|   ============     |",
           "+--------------------+"
         },
-        { // 7 - brazo der
+        {
           "+--------------------+",
           "|   +----------+     |",
           "|   |          |     |",
           "|   |          O     |",
-          "|   |         /|\\    |",
+          "|   |         /|\\   |",
           "|   |                |",
           "|   |                |",
-          "|                    |",
+          "|   |                |",
           "|   ============     |",
           "+--------------------+"
         },
-        { // 8 - pierna izq
+        {
           "+--------------------+",
           "|   +----------+     |",
           "|   |          |     |",
           "|   |          O     |",
-          "|   |         /|\\    |",
+          "|   |         /|\\   |",
           "|   |         /      |",
           "|   |                |",
-          "|                    |",
+          "|   |                |",
           "|   ============     |",
           "+--------------------+"
         },
-        { // 9 - pierna der
+        {
           "+--------------------+",
           "|   +----------+     |",
           "|   |          |     |",
           "|   |          O     |",
-          "|   |         /|\\    |",
-          "|   |         / \\    |",
+          "|   |         /|\\   |",
+          "|   |         / \\   |",
           "|   |                |",
-          "|                    |",
+          "|   |                |",
           "|   ============     |",
           "+--------------------+"
         }
