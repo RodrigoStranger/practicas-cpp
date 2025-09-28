@@ -40,8 +40,8 @@ inline void mostrarLetrasIncorrectas(const vector<char>& letrasIncorrectas) {
   cout << "]";
 }
 
-inline void mostrarIntentosGeneral(const int& intentos, const int& maxIntentos) {
-  cout << "Intento: " << intentos << "/" << maxIntentos << endl;
+inline void mostrarIntentosFallidos(const int& intentos, const int& maxIntentos) {
+  cout << "Intentos Fallidos: " << intentos << "/" << maxIntentos << endl;
 }
 
 inline void mostrarResultadoFinal(bool victoria, const string& palabra, int intentos, int maxIntentos, const vector<char>& letrasIncorrectas) {
@@ -50,7 +50,7 @@ inline void mostrarResultadoFinal(bool victoria, const string& palabra, int inte
   } else {
     cout << "Has perdido. La palabra era: " << palabra << endl;
   }
-  mostrarIntentosGeneral(intentos, maxIntentos);
+  mostrarIntentosFallidos(intentos, maxIntentos);
   mostrarLetrasIncorrectas(letrasIncorrectas);
 }
 

@@ -100,7 +100,7 @@ inline void ejecutarJuego(string& palabra, int& intentos, int maxIntentos, vecto
         mostrarCategoria(categoria);
         mostrarAhorcado(intentos);
         mostrarProgreso(palabra, letrasAdivinadas);
-        mostrarIntentosGeneral(intentos, maxIntentos);
+        mostrarIntentosFallidos(intentos, maxIntentos);
         mostrarLetrasIncorrectas(letrasIncorrectas);
         char letra = pedirLetra();
         if (!letraYaIngresada(letra, letrasAdivinadas, letrasIncorrectas)) {
