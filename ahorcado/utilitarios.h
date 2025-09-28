@@ -9,8 +9,8 @@ inline char convertirALetraMinuscula(char letra) {
 
 inline string convertirALetraMinuscula(const string& texto) {
     string resultado = texto;
-    for (char& c : resultado) {
-        c = tolower(c);
+    for (int i = 0; i < resultado.size(); i++) {
+        resultado[i] = tolower(resultado[i]);
     }
     return resultado;
 }
