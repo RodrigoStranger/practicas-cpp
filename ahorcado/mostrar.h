@@ -4,7 +4,7 @@
 #define MOSTRAR_H
 
 inline void mostrarCategoria(const string& categoria) {
-    cout << "Categoría: " << categoria << endl;
+    cout << "La Categoría escogida es: " << categoria << endl;
 }
 
 inline void mostrarProgreso(const string& palabra, const vector<char>& letrasAdivinadas) {
@@ -155,11 +155,14 @@ inline void mostrarAhorcado(int intentos) {
     };
 
     if (intentos < 0) intentos = 0;
-
     if (intentos >= (int)etapas.size()) intentos = etapas.size() - 1;
+    
+    // Ajustar índice: primer fallo (intentos=1) muestra etapa 0 (solo base)
+    int indiceEtapa = intentos - 1;
+    if (indiceEtapa < 0) indiceEtapa = 0;
 
-    for (int i = 0; i < etapas[intentos].size(); i++) {
-        cout << etapas[intentos][i] << endl;
+    for (size_t i = 0; i < etapas[indiceEtapa].size(); i++) {
+        cout << etapas[indiceEtapa][i] << endl;
     }
 
     cout << endl;
