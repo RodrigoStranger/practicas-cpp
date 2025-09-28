@@ -4,7 +4,7 @@
 #define MOSTRAR_H
 
 inline void mostrarCategoria(const string& categoria) {
-    cout << "La Categoría escogida es: " << categoria << endl;
+    cout << "La Categoria escogida fue: " << categoria << endl;
 }
 
 inline void mostrarProgreso(const string& palabra, const vector<char>& letrasAdivinadas) {
@@ -24,7 +24,7 @@ inline void mostrarProgreso(const string& palabra, const vector<char>& letrasAdi
       cout << "_ ";
     }
   }
-  cout << endl << endl;
+  cout << endl;
 }
 
 
@@ -37,7 +37,7 @@ inline void mostrarLetrasIncorrectas(const vector<char>& letrasIncorrectas) {
       cout << ", ";
     }
   }
-  cout << "]" << endl << endl;
+  cout << "]";
 }
 
 inline void mostrarResultadoFinal(bool victoria, const string& palabra, int intentos, int maxIntentos, const vector<char>& letrasIncorrectas) {
@@ -47,7 +47,6 @@ inline void mostrarResultadoFinal(bool victoria, const string& palabra, int inte
     cout << "Has perdido. La palabra era: " << palabra << endl;
   }
   cout << "Intentos usados: " << intentos << "/" << maxIntentos << endl;
-  cout << "Letras equivocadas: ";
   mostrarLetrasIncorrectas(letrasIncorrectas);
 }
 
@@ -194,7 +193,6 @@ inline void mostrarAhorcado(int intentos) {
     for (int i = 0; i < (int)etapas[intentos].size(); i++) {
         cout << etapas[intentos][i] << endl;
     }
-    cout << endl;
 }
 
 #endif

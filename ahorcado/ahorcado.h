@@ -7,12 +7,8 @@
 
 inline void inicializarJuego(string& palabra, int& intentos, int& maxIntentos, string& categoria) {
     srand((unsigned)time(0));
-    
-    // Seleccionar categoría aleatoria
     int indiceCategoria = rand() % todasLasCategorias.size();
     categoria = nombresCategorias[indiceCategoria];
-    
-    // Seleccionar palabra aleatoria de la categoría elegida
     int indicePalabra = rand() % todasLasCategorias[indiceCategoria].size();
     palabra = todasLasCategorias[indiceCategoria][indicePalabra];
     
@@ -110,12 +106,14 @@ inline void ejecutarJuego(string& palabra, int& intentos, int maxIntentos, vecto
             procesarLetra(letra, palabra, letrasAdivinadas, letrasIncorrectas, intentos);
         }        if (palabraAdivinada(palabra, letrasAdivinadas)) {
             limpiarConsola();
+            mostrarCategoria(categoria);
             mostrarAhorcado(intentos);
             mostrarResultadoFinal(true, palabra, intentos, maxIntentos, letrasIncorrectas);
             return;
         }
     }
     limpiarConsola();
+    mostrarCategoria(categoria);
     mostrarAhorcado(intentos);
     mostrarResultadoFinal(false, palabra, intentos, maxIntentos, letrasIncorrectas);
 }
