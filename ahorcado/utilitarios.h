@@ -1,7 +1,7 @@
 #include "librerias.h"
 
-#ifndef PEDIR_H
-#define PEDIR_H
+#ifndef UTILITARIOS_H
+#define UTILITARIOS_H
 
 inline char convertirALetraMinuscula(char letra) {
     return tolower(letra);
