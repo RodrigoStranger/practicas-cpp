@@ -5,10 +5,17 @@
 #ifndef AHORCADO_H
 #define AHORCADO_H
 
-inline void inicializarJuego(string& palabra, int& intentos, int& maxIntentos, const vector<string>& palabrasCategoria) {
+inline void inicializarJuego(string& palabra, int& intentos, int& maxIntentos, string& categoria) {
     srand((unsigned)time(0));
-    int indice = rand() % palabrasCategoria.size();
-    palabra = palabrasCategoria[indice];
+    
+    // Seleccionar categoría aleatoria
+    int indiceCategoria = rand() % todasLasCategorias.size();
+    categoria = nombresCategorias[indiceCategoria];
+    
+    // Seleccionar palabra aleatoria de la categoría elegida
+    int indicePalabra = rand() % todasLasCategorias[indiceCategoria].size();
+    palabra = todasLasCategorias[indiceCategoria][indicePalabra];
+    
     intentos = 0;
     maxIntentos = 10;
 }

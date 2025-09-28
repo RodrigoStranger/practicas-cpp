@@ -15,5 +15,12 @@ inline const vector<string> nombres = {
     "Ana", "Luis", "Carlos", "Maria", "Sofia"
 };
 
+inline const vector<vector<string>> todasLasCategorias = {
+    animales, sustantivos, nombres
+};
+
+inline const vector<string> nombresCategorias = {
+    "Animales", "Sustantivos", "Nombres"
+};
 
 #endif

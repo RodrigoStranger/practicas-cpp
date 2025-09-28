@@ -155,11 +155,16 @@ inline void mostrarAhorcado(int intentos) {
     };
 
     if (intentos < 0) intentos = 0;
+    
     if (intentos >= (int)etapas.size()) intentos = etapas.size() - 1;
     
-    // Ajustar índice: primer fallo (intentos=1) muestra etapa 0 (solo base)
     int indiceEtapa = intentos - 1;
+    
     if (indiceEtapa < 0) indiceEtapa = 0;
+    
+    if (intentos >= 10) {
+        indiceEtapa = etapas.size() - 1;
+    }
 
     for (size_t i = 0; i < etapas[indiceEtapa].size(); i++) {
         cout << etapas[indiceEtapa][i] << endl;
