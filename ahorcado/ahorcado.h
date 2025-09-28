@@ -1,7 +1,6 @@
 #include "utilitarios.h"
 #include "palabras.h"
 #include "mostrar.h"
-#include "pedir.h"
 
 #ifndef AHORCADO_H
 #define AHORCADO_H
